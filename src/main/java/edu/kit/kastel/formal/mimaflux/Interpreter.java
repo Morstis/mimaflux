@@ -40,7 +40,7 @@ public class Interpreter {
     public void parseFile(String fileName) throws IOException {
         String fileContent = Files.readString(Paths.get(fileName));
         if(MimaFlux.mmargs.gbi_hack) {
-            fileContent = "array = 0x8000\n" + fileContent.replaceAll("array\\s*:", "array__hidden:");
+            fileContent = "a = 0x8000\n" + fileContent.replaceAll("a\\s*:", "a__hidden:");
             MimaFlux.log("Modified program:");
             MimaFlux.log(fileContent);
         }
